@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonrp.exe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff00ff;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/2a/47/d5/2a47d59017052d2ce648719d339402f3.jpg') no-repeat center center/cover;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            animation: glow 1.5s infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff; }
+            to { text-shadow: 0 0 20px #ff00ff; }
+        }
+
+        .hero .subheading {
+            font-size: 40px;
+            color: white;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            margin-top: 10px;
+        }
+
+        .hero .subheading-x {
+            margin-top: 10px;
+        }
+
+        .hero .subheading-404 {
+            margin-top: 10px;
+        }
+
+        .sections {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px 20px;
+            gap: 40px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0ff;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+
+        .section img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        /* Kaydırma V'leri için stil */
+        .scroll-indicator {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: white;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+        }
+
+        /* Sol ve sağ tarafta V'leri konumlandır */
+        .scroll-indicator-left {
+            left: 10px;
+        }
+
+        .scroll-indicator-right {
+            right: 10px;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            margin: 10px 0;
+            animation: move 1s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(20px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html">Ana Sayfa</a> <!-- Burada index.html olarak bağlantıyı düzenliyoruz -->
+        <a href="crew.html">Crew</a> <!-- Crew sayfası için bağlantı -->
+    </div>
+    
+
+    <div class="hero">
+        <h1>Watch, and Learn.</h1>
+
+        <!-- Alt başlıklar -->
+        <div class="subheading subheading-x">w/</div>
+        <div class="subheading subheading-404">404 Not Found</div>
+
+        <!-- Sol ve sağ tarafta kaydırma V'leri -->
+        <div class="scroll-indicator scroll-indicator-left">
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+        </div>
+
+        <div class="scroll-indicator scroll-indicator-right">
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+            <span>V</span>
+        </div>
+    </div>
+
+    <div class="sections">
+        <div class="section">
+            <img src="ekip1.png" alt="Araba 1" class="lightbox-trigger" data-large="ekip1.png">
+            <p>Takımımız son yarışta büyük bir zafer elde etti. Bu başarı, hep birlikte gösterdiğimiz üstün çabanın sonucudur.</p>
+        </div>
+        <div class="section">
+            <img src="ekip2.png" alt="Araba 2" class="lightbox-trigger" data-large="ekip2.png">
+            <p>Yarış takımlarımız her zaman yeni stratejilerle en iyi sonuçları elde etmeyi hedeflemektedir.</p>
+        </div>
+        <div class="section">
+            <img src="ekip3.png" alt="Araba 3" class="lightbox-trigger" data-large="ekip3.png">
+            <p>Gelecek yarışlar için heyecan dorukta. Takımımız, hız kesmeden hazırlıklara devam ediyor!</p>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Büyük Resim" id="lightbox-image">
+    </div>
+
+    <div class="footer">
+        <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
+        <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
+        Tüm Hakları Saklıdır &copy; 2025     
+    </div>
+    
+    <script>
+        // Lightbox gösterme ve gizleme işlemleri
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+
+        lightboxTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const largeImageUrl = this.getAttribute('data-large');
+                lightboxImage.src = largeImageUrl;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        lightbox.addEventListener('click', function(event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

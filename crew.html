@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonrp.exe - Crew</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff00ff;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('ekip1.png') no-repeat center center/cover;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            animation: glow 1.5s infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff; }
+            to { text-shadow: 0 0 20px #ff00ff; }
+        }
+
+        .crew-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+            justify-items: center;
+        }
+
+        .crew-member {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+
+        .crew-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+        }
+
+        .crew-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .crew-member .name {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            z-index: 1;
+        }
+
+        .crew-member:hover .image-hover {
+            opacity: 1;
+        }
+
+        .image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* İsimler ve resimler arasındaki düzen */
+        .crew-member .name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+        /* Kaydırma V'leri için stil */
+        .scroll-indicator {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: white;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+        }
+
+        /* Sol ve sağ tarafta V'leri konumlandır */
+        .scroll-indicator-left {
+            left: 10px;
+        }
+
+        .scroll-indicator-right {
+            right: 10px;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            margin: 10px 0;
+            animation: move 1s infinite alternate;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <a href="index.html">Ana Sayfa</a> <!-- Burada index.html olarak bağlantıyı düzenliyoruz -->
+        <a href="crew.html">Crew</a> <!-- Crew sayfası için bağlantı -->
+    </div>
+    
+
+    <div class="hero">
+        <h1>Meet The Crew</h1>
+    </div>
+
+    <div class="crew-container">
+        <!-- Crew Member 1 -->
+        <div class="crew-member">
+            <img src="lars.png" alt="Karakter 1">
+            <div class="image-hover">
+                <img src="penumbraff2.png" alt="Araba 1">
+            </div>
+            <div class="name">Lars Leth</div>
+        </div>
+
+        <!-- Crew Member 2 -->
+        <div class="crew-member">
+            <img src="luther.png" alt="Karakter 2">
+            <div class="image-hover">
+                <img src="elegy.png" alt="Araba 2">
+            </div>
+            <div class="name">Luther Keith</div>
+        </div>
+
+        <!-- Crew Member 3 -->
+        <div class="crew-member">
+            <img src="lucas.png" alt="Karakter 3">
+            <div class="image-hover">
+                <img src="tailgaters.png" alt="Araba 3">
+            </div>
+            <div class="name">Lucas Cloud</div>
+        </div>
+
+        <!-- Crew Member 4 -->
+        <div class="crew-member">
+            <img src="lucasc.png" alt="Karakter 4">
+            <div class="image-hover">
+                <img src="komoda.png" alt="Araba 4">
+            </div>
+            <div class="name">Lucas Clark</div>
+        </div>
+
+        <!-- Crew Member 5 -->
+        <div class="crew-member">
+            <img src="seth.png" alt="Karakter 5">
+            <div class="image-hover">
+                <img src="jester3.png" alt="Araba 5">
+            </div>
+            <div class="name">Seth Murphy</div>
+        </div>
+
+        <!-- Crew Member 6 -->
+        <div class="crew-member">
+            <img src="noah.png" alt="Karakter 6">
+            <div class="image-hover">
+                <img src="404.png" alt="Araba 6">
+            </div>
+            <div class="name">Noah Murphy</div>
+        </div>
+
+        <!-- Crew Member 7 -->
+        <div class="crew-member">
+            <img src="jay.png" alt="Karakter 7">
+            <div class="image-hover">
+                <img src="404.png" alt="Araba 7">
+            </div>
+            <div class="name">Jay Darius Price</div>
+        </div>
+
+        <!-- Crew Member 8 -->
+        <div class="crew-member">
+            <img src="morde.png" alt="Karakter 8">
+            <div class="image-hover">
+                <img src="404.png" alt="Araba 8">
+            </div>
+            <div class="name">Morde Nero</div>
+        </div>
+
+        <!-- Crew Member 9 -->
+        <div class="crew-member">
+            <img src="wexx.png" alt="Karakter 9">
+            <div class="image-hover">
+                <img src="404.png" alt="Araba 9">
+            </div>
+            <div class="name">Wexx Argy</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
+        <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
+        Tüm Hakları Saklıdır &copy; 2025     
+    </div>
+
+     <!-- Sol ve sağ tarafta kaydırma V'leri -->
+     <div class="scroll-indicator scroll-indicator-left">
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+    </div>
+
+    <div class="scroll-indicator scroll-indicator-right">
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+        <span>V</span>
+    </div>
+</div>
+
+</body>
+</html>
