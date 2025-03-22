@@ -93,10 +93,12 @@
 
         .crew-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr); /* 5 kolon */
+            grid-template-rows: repeat(3, 1fr); /* 3 satır */
             gap: 20px;
             padding: 40px;
             justify-items: center;
+            margin-top: 50px;
         }
 
         .crew-member {
@@ -146,7 +148,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* İsimler ve resimler arasındaki düzen */
         .crew-member .name {
             font-family: 'Orbitron', sans-serif;
             font-size: 30px;
@@ -159,38 +160,25 @@
             background: rgba(255, 255, 255, 0.1);
             margin-top: 50px;
         }
-        /* Kaydırma V'leri için stil */
-        .scroll-indicator {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: white;
-            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
-        }
 
-        /* Sol ve sağ tarafta V'leri konumlandır */
-        .scroll-indicator-left {
-            left: 10px;
-        }
-
-        .scroll-indicator-right {
-            right: 10px;
-        }
-
-        .scroll-indicator span {
-            display: block;
-            margin: 10px 0;
-            animation: move 1s infinite alternate;
-        }
+        /* Spesifik olarak her üyenin yerleşeceği kutucuklar */
+        .luther { grid-row: 1; grid-column: 3; }
+        .lars { grid-row: 2; grid-column: 2; }
+        .lucas { grid-row: 2; grid-column: 4; }
+        .lucasClark { grid-row: 3; grid-column: 1; }
+        .noah { grid-row: 3; grid-column: 3; }
+        .seth { grid-row: 3; grid-column: 5; }
 
     </style>
 </head>
 <body>
 
     <div class="navbar" id="navbar">
-        <a href="index.html">Ana Sayfa</a> <!-- Burada index.html olarak bağlantıyı düzenliyoruz -->
-        <a href="crew.html">Crew</a> <!-- Crew sayfası için bağlantı -->
+        <a href=".html">SAYFA</a>
+        <a href="about.html">About</a>
+        <a href="index.html">W.A.L</a>
+        <a href="crew.html">Crew</a>
+        <a href="cars.html">Cars</a>
     </div>
     
 
@@ -199,111 +187,65 @@
     </div>
 
     <div class="crew-container">
-        <!-- Crew Member 1 -->
-        <div class="crew-member">
-            <img src="lars.png" alt="Karakter 1">
-            <div class="image-hover">
-                <img src="penumbraff2.png" alt="Araba 1">
-            </div>
-            <div class="name">Lars Leth</div>
-        </div>
-
-        <!-- Crew Member 2 -->
-        <div class="crew-member">
-            <img src="luther.png" alt="Karakter 2">
-            <div class="image-hover">
-                <img src="elegy.png" alt="Araba 2">
+        <!-- Crew Member 1 (Luther) -->
+        <div class="crew-member luther">
+            <img src="luther1.png" alt="Karakter 1">
+            <div class="image-hover" onclick="window.location.href='luther.html'">
+                <img src="elegy2.png" alt="Araba 2">
             </div>
             <div class="name">Luther Keith</div>
         </div>
 
-        <!-- Crew Member 3 -->
-        <div class="crew-member">
+        <!-- Crew Member 2 (Lars) -->
+        <div class="crew-member lars">
+            <img src="lars1.png" alt="Karakter 2">
+            <div class="image-hover" onclick="window.location.href='lars.html'">
+                <img src="penumbra2mirror.png" alt="Araba 1">
+            </div>
+            <div class="name">Lars Leth</div>
+        </div>
+
+        <!-- Crew Member 3 (Lucas) -->
+        <div class="crew-member lucas">
             <img src="lucas.png" alt="Karakter 3">
-            <div class="image-hover">
-                <img src="tailgaters.png" alt="Araba 3">
+            <div class="image-hover" onclick="window.location.href='lucas.html'">
+                <img src="tailgaters2aynakırpıp.png" alt="Araba 3">
             </div>
             <div class="name">Lucas Cloud</div>
         </div>
 
-        <!-- Crew Member 4 -->
-        <div class="crew-member">
-            <img src="lucasc.png" alt="Karakter 4">
-            <div class="image-hover">
-                <img src="komoda.png" alt="Araba 4">
+        <!-- Crew Member 4 (Lucas Clark) -->
+        <div class="crew-member lucasClark">
+            <img src="lucasc1.png" alt="Karakter 4">
+            <div class="image-hover" onclick="window.location.href='lucasc.html'">
+                <img src="komoda1kırpık.png" alt="Araba 4">
             </div>
             <div class="name">Lucas Clark</div>
         </div>
 
-        <!-- Crew Member 5 -->
-        <div class="crew-member">
-            <img src="seth.png" alt="Karakter 5">
-            <div class="image-hover">
-                <img src="kuruma.png" alt="Araba 5">
-            </div>
-            <div class="name">Seth Murphy</div>
-        </div>
-
-        <!-- Crew Member 6 -->
-        <div class="crew-member">
-            <img src="noah.png" alt="Karakter 6">
-            <div class="image-hover">
-                <img src="jester3.png" alt="Araba 6">
+        <!-- Crew Member 5 (Noah) -->
+        <div class="crew-member noah">
+            <img src="noah.png" alt="Karakter 5">
+            <div class="image-hover" onclick="window.location.href='noah.html'">
+                <img src="jester1kırpık.png" alt="Araba 5">
             </div>
             <div class="name">Noah Murphy</div>
         </div>
 
-        <!-- Crew Member 7 -->
-        <div class="crew-member">
-            <img src="jay.png" alt="Karakter 7">
-            <div class="image-hover">
-                <img src="404.png" alt="Araba 7">
+        <!-- Crew Member 6 (Seth) -->
+        <div class="crew-member seth">
+            <img src="seth.png" alt="Karakter 6">
+            <div class="image-hover" onclick="window.location.href='seth.html'">
+                <img src="kuruma1.png" alt="Araba 6">
             </div>
-            <div class="name">Jay Darius Price</div>
-        </div>
-
-        <!-- Crew Member 8 -->
-        <div class="crew-member">
-            <img src="morde.png" alt="Karakter 8">
-            <div class="image-hover">
-                <img src="404.png" alt="Araba 8">
-            </div>
-            <div class="name">Morde Nero</div>
-        </div>
-
-        <!-- Crew Member 9 -->
-        <div class="crew-member">
-            <img src="wexx.png" alt="Karakter 9">
-            <div class="image-hover">
-                <img src="404.png" alt="Araba 9">
-            </div>
-            <div class="name">Wexx Argy</div>
+            <div class="name">Seth Murphy</div>
         </div>
     </div>
 
     <div class="footer">
         <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
         <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
-        Tüm Hakları Saklıdır &copy; 2025     
+        Tüm Hakları Saklıdır &copy; 2025
     </div>
-
-     <!-- Sol ve sağ tarafta kaydırma V'leri -->
-     <div class="scroll-indicator scroll-indicator-left">
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-    </div>
-
-    <div class="scroll-indicator scroll-indicator-right">
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-        <span>V</span>
-    </div>
-</div>
-
 </body>
 </html>

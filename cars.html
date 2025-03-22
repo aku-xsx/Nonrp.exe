@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabalar - Nonrp.exe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff00ff;
+        }
+
+        .container {
+            margin-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .arrow {
+            font-size: 40px;
+            cursor: pointer;
+            user-select: none;
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            color: #ff00ff;
+        }
+
+        .car-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .car-img {
+            width: 450px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            z-index: 2; /* Ana araba önde */
+            opacity: 0; /* Başlangıçta görünür yapmıyoruz */
+        }
+
+        .car-img.visible {
+            opacity: 1; /* Görünür yapıyoruz */
+        }
+
+        .car-img:hover {
+            box-shadow: 0 0 30px #ff00ff;
+            transform: scale(1.05);
+        }
+
+        .car-img:active {
+            transform: scale(0.95);
+        }
+
+        .small-img {
+            width: 225px;
+            height: 150px;
+            object-fit: cover;
+            filter: blur(5px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            pointer-events: none;
+            position: absolute;
+            z-index: 1; /* Küçük resimler büyük arabanın arkasında */
+        }
+
+        #left-car {
+            left: -250px; /* Konumu biraz geriye aldım */
+        }
+
+        #right-car {
+            right: -250px; /* Konumu biraz geriye aldım */
+        }
+
+        .car-info {
+            margin-top: 20px;
+            font-size: 20px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            opacity: 1; /* Başlangıçta görünür */
+            transform: translateY(0px); /* Başlangıç konumu */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href=".html">SAYFA</a>
+        <a href="about.html">About</a>
+        <a href="index.html">W.A.L</a>
+        <a href="crew.html">Crew</a>
+        <a href="cars.html">Cars</a>
+    </div>
+
+    <h1 style="margin-top: 80px; text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;">Arabalar</h1>
+
+    <div class="container">
+        <div class="arrow" onclick="prevCar()">&#9664;</div>
+
+        <div class="car-display">
+            <img id="left-car" class="small-img" src="car20.png" alt="Sol Araba">
+            <img id="main-car" class="car-img" src="car1.png" alt="Ana Araba" onclick="goToCarPage()">
+            <img id="right-car" class="small-img" src="car2.png" alt="Sağ Araba">
+        </div>
+
+        <div class="arrow" onclick="nextCar()">&#9654;</div>
+    </div>
+
+    <p class="car-info" id="car-info">Bu araç hızlı ve güçlü bir yarış arabasıdır.</p>
+
+    <div class="footer">
+        <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
+        <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
+        Tüm Hakları Saklıdır &copy; 2025     
+    </div>
+
+    <script>
+        const cars = [
+            { img: "elegy2.png", hover: "elegybg.png", info: "elegy.", url: "car1.html" },
+            { img: "404.png", hover: "404.png", info: "404.", url: "car2.html" },
+            { img: "komoda.png", hover: "komoda2.png", info: "Bu araba drift için özel olarak tasarlanmıştır.", url: "car3.html" },
+            { img: "404.png", hover: "404.png", info: "Bu araç modern teknolojilerle donatılmıştır.", url: "car4.html" },
+            { img: "jester1.png", hover: "jester2.png", info: "jester.", url: "car5.html" },
+            { img: "404.png", hover: "404.png", info: "Güçlü motoru sayesinde hız rekorları kırabilir.", url: "car6.html" },
+            { img: "404.png", hover: "404.png", info: "Bu araç çevreci hibrit teknolojisine sahiptir.", url: "car7.html" },
+            { img: "car8.png", hover: "car8-hover.png", info: "Lüks iç tasarımı ile uzun yolculuklara uygundur.", url: "car8.html" },
+            { img: "car9.png", hover: "car9-hover.png", info: "Şehir trafiği için kompakt ve ekonomik bir seçenektir.", url: "car9.html" },
+            { img: "car10.png", hover: "car10-hover.png", info: "Spor tasarımıyla dikkat çeken bir modeldir.", url: "car10.html" },
+            { img: "car11.png", hover: "car11-hover.png", info: "Yüksek performanslı süper bir otomobildir.", url: "car11.html" },
+            { img: "car12.png", hover: "car12-hover.png", info: "Modern hatlara sahip bir SUV modelidir.", url: "car12.html" },
+            { img: "car13.png", hover: "car13-hover.png", info: "Hız ve güvenliği bir arada sunan güçlü bir modeldir.", url: "car13.html" },
+            { img: "car14.png", hover: "car14-hover.png", info: "Fütüristik tasarımıyla göz alıcıdır.", url: "car14.html" },
+            { img: "car15.png", hover: "car15-hover.png", info: "Dayanıklılığıyla bilinen bir arazi aracıdır.", url: "car15.html" },
+            { img: "car16.png", hover: "car16-hover.png", info: "Şehir içinde rahat sürüş sunan bir modeldir.", url: "car16.html" },
+            { img: "car17.png", hover: "car17-hover.png", info: "Yüksek performanslı bir spor otomobildir.", url: "car17.html" },
+            { img: "car18.png", hover: "car18-hover.png", info: "Hibrit motoruyla çevre dostu bir seçenektir.", url: "car18.html" },
+            { img: "car19.png", hover: "car19-hover.png", info: "Fütüristik ve yenilikçi tasarımıyla öne çıkar.", url: "car19.html" },
+            { img: "car20.png", hover: "car20-hover.png", info: "Performansı ve aerodinamik yapısıyla dikkat çeker.", url: "car20.html" }
+        ];
+    
+        let currentIndex = 0;
+    
+        function updateCars() {
+            const mainCar = document.getElementById("main-car");
+            const leftCar = document.getElementById("left-car");
+            const rightCar = document.getElementById("right-car");
+            const carInfo = document.getElementById("car-info");
+
+            mainCar.src = cars[currentIndex].img;
+            mainCar.onmouseover = () => mainCar.src = cars[currentIndex].hover;
+            mainCar.onmouseout = () => mainCar.src = cars[currentIndex].img;
+
+            carInfo.textContent = cars[currentIndex].info;
+            leftCar.src = cars[(currentIndex - 1 + cars.length) % cars.length].img;
+            rightCar.src = cars[(currentIndex + 1) % cars.length].img;
+
+            // 'info' metnini ve görünürlüğünü güncelle
+            carInfo.style.opacity = 1;
+            carInfo.style.transform = "translateY(0)";
+            
+            // Ana arabayı görünür yap
+            mainCar.classList.add('visible');
+        }
+    
+        function nextCar() { currentIndex = (currentIndex + 1) % cars.length; updateCars(); }
+        function prevCar() { currentIndex = (currentIndex - 1 + cars.length) % cars.length; updateCars(); }
+        function goToCarPage() { window.location.href = cars[currentIndex].url; }
+    
+        // Sayfa yüklendiğinde ilk aracı göster
+        window.onload = function() {
+            updateCars();
+        }
+    </script>
+</body>
+</html>

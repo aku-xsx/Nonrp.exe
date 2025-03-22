@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonrp.exe - About</title>
+    <style>
+        /* Genel stil ayarları */
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            body {
+            overflow-x: hidden;
+}
+
+        }
+
+        h1, h2 {
+            color: #0ff;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #0ff; /* Metin rengini değiştirmemek için burayı #0ff yaptım */
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff00ff;
+            left: 50%;
+            bottom: -5px;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        /* About us bölümü */
+        .section p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .team-member {
+                flex-direction: row;
+                justify-content: center;
+                text-align: left;
+            }
+
+            .team-member img {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href=".html">SAYFA</a>
+        <a href="about.html">About</a>
+        <a href="index.html">W.A.L</a>
+        <a href="crew.html">Crew</a>
+        <a href="cars.html">Cars</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- About Us Section -->
+        <div class="section">
+            <h1>Hakkımızda</h1>
+            <p>Nonrp.exe, bir grup arkadaşın bir araya gelerek, kaliteli ve özgün rol yapma deneyimleri sunduğu bir topluluktur. Sunucularda hem legal hem de illegal rollerde yaratıcı ve derinlemesine hikayeler sunuyor, topluluğumuzu her zaman daha iyi hale getirmeye çalışıyoruz. Amacımız, sadece eğlenceli bir deneyim sağlamak değil, aynı zamanda oyunculara kendilerini ifade edebilecekleri özgür bir alan yaratmaktır. Hem eğlence hem de topluluk odaklı bir yaklaşım benimsiyoruz.
+
+            </p>
+        </div>
+
+        <!-- Mission & Vision Section -->
+        <div class="section">
+            <h2>Misyon & Vizyonumuz</h2>
+            <p><strong>Misyonumuz:</strong> Misyonumuz, oyuncularımıza en yüksek kalitede rol yapma deneyimini sunmak ve her zaman topluluğumuzun büyümesine katkıda bulunmaktır. Hem legal hem de illegal karakter rollerinde, oyunculara benzersiz, derinlemesine ve anlamlı hikayeler yaratma fırsatı sağlıyoruz. Bulunduğumuz sunucularda, her zaman yaratıcı ve özgün roller üstlenerek, topluluğumuzu daha iyi bir hale getirmeye çalışıyor ve her an yenilikçi çözümler sunuyoruz. Her türlü karakter rolünü, oyun içi etkileşimleri, topluluk etkinliklerini ve platformdaki deneyimleri en üst seviyeye taşımak için sürekli olarak kendimizi geliştiriyoruz.</p>
+            <p><strong>Vizyonumuz:</strong> Vizyonumuz, sunucularda azınlık oyuncuların da yeteneklerini, katkılarını ve rollerinin kalitesini hak ettiği şekilde takdir edilmesini sağlamak. Hedefimiz, sunucuların sadece para kazanmak için değil, oyunculara gerçek anlamda özgürlük, yaratıcılık ve deneyim sunan, kendine özgü bir platform yaratmayı amaçladığını kanıtlamak. Bu sayede, sadece para ve şöhret değil, aynı zamanda toplulukların büyümesine ve gelişmesine katkı sağlamak.</p>
+        </div>
+
+        <!-- Tarihçe Bölümü -->
+        <div class="section">
+            <h2>Kısaca Tarihimiz</h2>
+            <p>2023 yılı gibi biz 3 arkadaş sevdiğimiz bir yayıncının Discord chatinde sohbet ederken komik bir şekilde arkadaş olduk. O günden sonra çeşitli sunucularda beraber rol yaptık, çok güzel, herzaman aklımızda olacak dostluklar kurduk. Şuanda ise <span style="font-size: 24px; color: #ff4747; animation: blink 1s linear infinite;"> [!]4̶0̶4̶ ̶N̶o̶t̶ ̶F̶o̶u̶n̶d̶ [!] </span> ile birlikte kaliteli rollere imza atmaktayız.</p>
+
+<style>
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
+        <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
+        Tüm Hakları Saklıdır &copy; 2025
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Clark - Crew</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #111, #000);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            padding-top: 100px;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            background: url('lucasclark-background.jpg') no-repeat center center/cover;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            animation: glow 1.5s infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff; }
+            to { text-shadow: 0 0 20px #ff00ff; }
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-column {
+            width: 60%;
+        }
+
+        .right-column {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #0ff;
+            margin: 20px 0;
+        }
+
+        .bio, .story, .cars {
+            margin-bottom: 30px;
+        }
+
+        .bio h2, .story h2, .cars h2 {
+            font-size: 24px;
+            color: #0ff;
+        }
+
+        .bio p, .story p, .cars p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        .car-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .img-box {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .car-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <a href=".html">SAYFA</a>
+        <a href="about.html">About</a>
+        <a href="index.html">W.A.L</a>
+        <a href="crew.html">Crew</a>
+        <a href="cars.html">Cars</a>
+    </div>
+    
+
+    <div class="hero">
+        <h1>Lucas Clark</h1>
+    </div>
+
+    <div class="container">
+        <div class="left-column">
+            <!-- Bio Section -->
+            <div class="bio">
+                <h2>Kimlik Bilgileri</h2>
+                <p><strong>Adı:</strong> Lucas Clark</p>
+                <p><strong>Yaş:</strong> 29</p>
+                <p><strong>Doğum Tarihi:</strong> 8 Ocak 1996</p>
+                <p><strong>Lakap:</strong> "The Shadow"</p>
+                <p><strong>Hikaye:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
+            </div>
+
+            <div class="line"></div>
+
+            <!-- Story Section -->
+            <div class="story">
+                <h2>Hikayesi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
+            </div>
+
+            <div class="line"></div>
+
+            <!-- Cars Section -->
+            <div class="cars">
+                <h2>Kullandığı Arabalar</h2>
+                <div class="car-gallery">
+                    <div class="img-box" onclick="nextCar(1)">
+                        <img src="bumblebee.png" alt="Car 1">
+                    </div>
+                    <div class="img-box" onclick="nextCar(2)">
+                        <img src="jester1.png" alt="Car 2">
+                    </div>
+                    <div class="img-box" onclick="nextCar(3)">
+                        <img src="elegybg.png" alt="Car 3">
+                    </div>
+                    <div class="img-box" onclick="nextCar(4)">
+                        <img src="komoda.png" alt="Car 4">
+                    </div>
+                    <div class="img-box" onclick="nextCar(5)">
+                        <img src="tailgaters.png" alt="Car 5">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <!-- Profile Image -->
+            <img src="lucasclark1.png" alt="Lucas Clark Profile" width="250px" class="img-box">
+
+            <!-- More Images -->
+            <div class="img-box">
+                <img src="lucasclark2.png" alt="Lucas Clark 2" width="250px" class="img-box">
+            </div>
+            <div class="img-box">
+                <img src="lucasclark3.png" alt="Lucas Clark 3" width="250px" class="img-box">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
+        <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
+        Tüm Hakları Saklıdır &copy; 2025
+    </div>
+
+    
+</body>
+</html>

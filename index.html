@@ -68,7 +68,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: url('https://i.pinimg.com/originals/2a/47/d5/2a47d59017052d2ce648719d339402f3.jpg') no-repeat center center/cover;
+            background: url('elegybg.png') no-repeat center center/cover;
             text-align: center;
             position: relative;
         }
@@ -115,7 +115,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 60px 20px;
+            padding: 50px 350px;
             gap: 40px;
         }
 
@@ -170,46 +170,17 @@
             margin-top: 50px;
         }
 
-        /* Kaydırma V'leri için stil */
-        .scroll-indicator {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: white;
-            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
-        }
-
-        /* Sol ve sağ tarafta V'leri konumlandır */
-        .scroll-indicator-left {
-            left: 10px;
-        }
-
-        .scroll-indicator-right {
-            right: 10px;
-        }
-
-        .scroll-indicator span {
-            display: block;
-            margin: 10px 0;
-            animation: move 1s infinite alternate;
-        }
-
-        @keyframes move {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(20px);
-            }
-        }
+       
 
     </style>
 </head>
 <body>
     <div class="navbar" id="navbar">
-        <a href="index.html">Ana Sayfa</a> <!-- Burada index.html olarak bağlantıyı düzenliyoruz -->
+        <a href=".html">SAYFA</a>
+        <a href="about.html">About</a>
+        <a href="index.html">W.A.L</a> <!-- Burada index.html olarak bağlantıyı düzenliyoruz -->
         <a href="crew.html">Crew</a> <!-- Crew sayfası için bağlantı -->
+        <a href="cars.html">Cars</a>
     </div>
     
 
@@ -219,29 +190,12 @@
         <!-- Alt başlıklar -->
         <div class="subheading subheading-x">w/</div>
         <div class="subheading subheading-404">404 Not Found</div>
-
-        <!-- Sol ve sağ tarafta kaydırma V'leri -->
-        <div class="scroll-indicator scroll-indicator-left">
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-        </div>
-
-        <div class="scroll-indicator scroll-indicator-right">
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-            <span>V</span>
-        </div>
     </div>
 
     <div class="sections">
         <div class="section">
-            <img src="ekip1.png" alt="Araba 1" class="lightbox-trigger" data-large="ekip1.png">
-            <p>Takımımız son yarışta büyük bir zafer elde etti. Bu başarı, hep birlikte gösterdiğimiz üstün çabanın sonucudur.</p>
+            <img src="bumblebee.png" alt="Araba 1" class="lightbox-trigger" data-large="bumblebee.png">
+            <p>Bumblebee olarakta bilinen bu Vigero ZX Lars'ın arabasıdır.</p>
         </div>
         <div class="section">
             <img src="ekip2.png" alt="Araba 2" class="lightbox-trigger" data-large="ekip2.png">
