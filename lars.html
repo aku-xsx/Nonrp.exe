@@ -31,15 +31,32 @@
             justify-content: center;
             padding: 20px 0;
             z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
         }
 
         .navbar a {
-            color: #0ff;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             margin: 0 20px;
             font-size: 18px;
             transition: 0.3s;
             position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #3d0155;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s;
         }
 
         .navbar a:hover::after {
@@ -52,7 +69,7 @@
             align-items: center;
             justify-content: center;
             height: 60vh;
-            background: url('lars-background.jpg') no-repeat center center/cover;
+            background: url('/fotolar/blue\ Nissan\ Skyline.jpg') no-repeat center center/cover;
             text-align: center;
             position: relative;
         }
@@ -69,15 +86,15 @@
 
         .hero h1 {
             font-size: 60px;
-            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            text-shadow: 0 0 10px #280137, 0 0 20px #b806ff;
             animation: glow 1.5s infinite alternate;
             position: relative;
             z-index: 1;
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 10px #0ff; }
-            to { text-shadow: 0 0 20px #ff00ff; }
+            from { text-shadow: 0 0 10px #280137; }
+            to { text-shadow: 0 0 20px #b806ff; }
         }
 
         .container {
@@ -100,7 +117,7 @@
         .line {
             width: 100%;
             height: 2px;
-            background-color: #0ff;
+            background-color: #ebebeb;
             margin: 20px 0;
         }
 
@@ -110,9 +127,12 @@
 
         .bio h2, .story h2, .cars h2 {
             font-size: 24px;
-            color: #0ff;
+            color: #280137;
         }
-
+        .bio h3, .story h3, .cars h3 {
+            font-size: 24px;
+            color: #280137;
+        }
         .bio p, .story p, .cars p {
             font-size: 16px;
             color: #bbb;
@@ -166,20 +186,33 @@
             <div class="bio">
                 <h2>Kimlik Bilgileri</h2>
                 <p><strong>Adı:</strong> Lars Leth</p>
-                <p><strong>Yaş:</strong> 28</p>
-                <p><strong>Doğum Tarihi:</strong> 22 Kasım 1997</p>
-                <p><strong>Lakap:</strong> "The Ghost"</p>
-                <p><strong>Hikaye:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
-            </div>
+                <p><strong>Yaş:</strong> 20</p>
+                <p><strong>Doğum Tarihi:</strong> 30 Haziran 2005</p>
+                <p><strong>Lakap:</strong> "Tyr"</p>
+            </div>  
 
             <div class="line"></div>
 
             <!-- Story Section -->
-            <div class="story">
-                <h2>Hikayesi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
-            </div>
+            <div class="bio">
+                <h2>Karakter Hikayesi</h2>
+                <p><strong>Kişilik Tipi:</strong> Sessiz ve İçe dönük bir kişilik özelliği var.</p>
+                <p><strong>Güçlü Yönleri:</strong>Soğukkanlı ve Mantıklı,Lider Ruhu ile öne çıkar.</p>
+                <p><strong>Zayıf Yönleri:</strong> Duygularını bastırması, Kontrol Takıntısı(Her şeyi kendi ellerinde tutmak istemesi), Değer verdiği kişilere aşırı sadık olması.</p>
+                <p><strong>Hobiler ve İlgi Alanları:</strong> Larsın En büyük hobilerinden biri Araba sürmek Ve Müzik dinlerken ara sokaklarda tek başına yürümek bunu yapmalarından bir kaç  sebepleri mental sağlığını düzeltmek, kendisini rahatlatmak bunları yapınca güvende olduğunu hissediyor ve düzenli olarak bunları yapıyor.</p>
+                <p><strong>Fobiler ve Korkular:</strong> Pistantrofobi Lars, geçmişte en güvendiği kişi tarafından bıçaklandığı için insanlara güvenme konusunda büyük sıkıntılar yaşar</p>
+                <div class="line"></div>      
+                <h3>Ana Hikaye</h3>
+                <p>Lars, 2005 yılında New York'ta doğdu ve Brooklyn’de, babası polis, annesi doktor olan bir ailede büyüdü. Çocukluğunda akademik olarak oldukça başarılıydı; ilkokul ve ortaokul yıllarında sınıfının en iyileri arasındaydı. Ancak, lise döneminde Zoe adında bir kıza aşık olmasıyla birlikte dersleri gerilemeye başladı. İlk başta platonik bir aşk yaşadı, ancak Zoe'nin başka biriyle sevgili olması onu derinden etkiledi. Lars, bu süreçte kendini derslerden uzaklaştırarak bilgisayara ve kodlamaya yöneldi. Bilgisayar başında geçirdiği uzun saatler, ona yeni bir tutku kazandırdı.
 
+                    Zamanla siber güvenlik konularına ilgi duymaya başladı ve ailesinin sürekli onu abisiyle kıyaslamasına rağmen kendi yolunu çizmeye karar verdi. 12. sınıfa geçtiğinde hem derslerine odaklanmaya hem de freelance işlerle kazanç sağlamaya başladı. Ailesinin polis olması yönündeki baskısına karşı durarak, kendi yetenekleriyle başarılı olabileceğini göstermeye çalıştı. Freelance projeleri büyüdükçe kendine olan güveni arttı ve siber güvenlik alanında daha büyük fırsatlar aramaya başladı.
+                    
+                    Bir gün, çalıştığı yazılım şirketinde büyük bir siber güvenlik projesi için seçildi. Bu proje onun için dönüm noktasıydı; başarırsa kariyerine sağlam bir adım atacaktı. Ancak, proje ilerledikçe karşılaştığı baskılar ve sorumluluklar onu içsel bir sorgulamaya itti. Gece yürüyüşlerine çıkarak yüksek yerlerde oturup düşünmek eski bir alışkanlığıydı ve bu dönemde yine bu rutine geri döndü.
+                    
+                    Siber güvenlik dünyasına olan ilgisi arttıkça, yasadışı yollara kayma riskiyle de karşı karşıya kaldı. Çevrimiçi bir forumda tanıştığı kişiler ona küçük çaplı DDoS saldırıları ve veri hırsızlığı gibi teklifler sundu. Başlangıçta bu işlere mesafeli dursa da, zamanla yeteneklerini test etmek ve daha fazla öğrenmek için bu teklifleri değerlendirmeye başladı. İlk olarak, bir web sitesine saldırı düzenledi ve güvenlik açıklarını test etti. Daha sonra, kişisel veri hırsızlığı gibi daha ciddi işlere adım attı. Bu süreç ona heyecan verse de, zamanla kendini daha büyük bir çıkmazın içinde buldu.
+                    
+                    Ancak, siber güvenlik alanında yasal bir kariyer yapmak istiyordu. Bu yüzden okulları araştırmaya başladı ve ULSA (University of Los Santos, San Andreas) dikkatini çekti. Bu üniversite, ona meşru bir kariyer inşa etme fırsatı sunabilirdi. İçinde bulunduğu karanlık dünyadan çıkmak ve yeni bir başlangıç yapmak için Los Santos'a gitmeye karar verdi. Ancak, geçmişi ve siber suç dünyasındaki bağlantıları onu kolay kolay bırakmayacaktı. Lars, geleceğini şekillendirmek için yasal bir yol seçmeye çalışırken, geçmişteki alışkanlıklarıyla da yüzleşmek zorundaydı.</p>
+            </div>
             <div class="line"></div>
 
             <!-- Cars Section -->
@@ -187,19 +220,19 @@
                 <h2>Kullandığı Arabalar</h2>
                 <div class="car-gallery">
                     <div class="img-box" onclick="nextCar(1)">
-                        <img src="bumblebee.png" alt="Car 1">
+                        <img src="/fotolar/rh7.jpg" alt="Car 1">
                     </div>
                     <div class="img-box" onclick="nextCar(2)">
-                        <img src="jester1.png" alt="Car 2">
+                        <img src="/fotolar/rh77.jpg" alt="Car 2">
                     </div>
                     <div class="img-box" onclick="nextCar(3)">
-                        <img src="elegybg.png" alt="Car 3">
+                        <img src="/fotolar/blue Nissan Skyline.jpg" alt="Car 3">
                     </div>
                     <div class="img-box" onclick="nextCar(4)">
-                        <img src="komoda.png" alt="Car 4">
+                        <img src="/fotolar/bumblebee3.png" alt="Car 4">
                     </div>
                     <div class="img-box" onclick="nextCar(5)">
-                        <img src="tailgaters.png" alt="Car 5">
+                        <img src="/fotolar/penumbra1.png" alt="Car 5">
                     </div>
                 </div>
             </div>
@@ -208,14 +241,14 @@
 
         <div class="right-column">
             <!-- Profile Image -->
-            <img src="lars1.png" alt="Lars Leth Profile" width="250px" class="img-box">
+            <img src="/fotolar/lars1.png" alt="Lars Leth Profile" width="250px" class="img-box">
 
             <!-- More Images -->
             <div class="img-box">
-                <img src="lars2.png" alt="Lars Leth 2" width="250px" class="img-box">
+                <img src="/fotolar/lars2.png" alt="Lars Leth 2" width="250px" class="img-box">
             </div>
             <div class="img-box">
-                <img src="lars3.png" alt="Lars Leth 3" width="250px" class="img-box">
+                <img src="/fotolar/lars3.png" alt="Lars Leth 3" width="250px" class="img-box">
             </div>
         </div>
     </div>
@@ -223,7 +256,7 @@
     <div class="footer">
         <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
         <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
-        Tüm Hakları Saklıdır &copy; 2025
+        Tüm Hakları Saklıdır. &copy; 2025
     </div>
 
     

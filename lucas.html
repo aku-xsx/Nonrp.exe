@@ -31,15 +31,32 @@
             justify-content: center;
             padding: 20px 0;
             z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
         }
 
         .navbar a {
-            color: #0ff;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             margin: 0 20px;
             font-size: 18px;
             transition: 0.3s;
             position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #036629;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s;
         }
 
         .navbar a:hover::after {
@@ -52,7 +69,7 @@
             align-items: center;
             justify-content: center;
             height: 60vh;
-            background: url('lucas-background.jpg') no-repeat center center/cover;
+            background: url('/fotolar/image.png') no-repeat center center/cover;
             text-align: center;
             position: relative;
         }
@@ -69,15 +86,15 @@
 
         .hero h1 {
             font-size: 60px;
-            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            text-shadow: 0 0 10px #0385b8, 0 0 20px #187201;
             animation: glow 1.5s infinite alternate;
             position: relative;
             z-index: 1;
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 10px #0ff; }
-            to { text-shadow: 0 0 20px #ff00ff; }
+            from { text-shadow: 0 0 10px #187201; }
+            to { text-shadow: 0 0 20px #187201; }
         }
 
         .container {
@@ -100,7 +117,7 @@
         .line {
             width: 100%;
             height: 2px;
-            background-color: #0ff;
+            background-color: #ffffff;
             margin: 20px 0;
         }
 
@@ -110,12 +127,15 @@
 
         .bio h2, .story h2, .cars h2 {
             font-size: 24px;
-            color: #0ff;
+            color: #187201;
         }
-
+        .bio h3, .story h3, .cars h3 {
+            font-size: 24px;
+            color: #187201;
+        }
         .bio p, .story p, .cars p {
             font-size: 16px;
-            color: #bbb;
+            color: #ffffff;
         }
 
         .car-gallery img {
@@ -166,18 +186,34 @@
             <div class="bio">
                 <h2>Kimlik Bilgileri</h2>
                 <p><strong>Adı:</strong> Lucas Cloud</p>
-                <p><strong>Yaş:</strong> 26</p>
-                <p><strong>Doğum Tarihi:</strong> 12 Temmuz 1999</p>
-                <p><strong>Lakap:</strong> "The Maverick"</p>
-                <p><strong>Hikaye:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
-            </div>
+                <p><strong>Yaş:</strong> 18</p>
+                <p><strong>Doğum Tarihi:</strong> 1 Ocak 2007</p>
+                <p><strong>Lakap:</strong> "Npc"</p>
+            </div>  
 
             <div class="line"></div>
 
             <!-- Story Section -->
-            <div class="story">
-                <h2>Hikayesi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius nisi vitae enim ultricies, sit amet sodales tortor lobortis. Nulla sit amet eros auctor, lacinia risus in, volutpat nisi. Aliquam erat volutpat. Integer vel nunc et nulla pharetra laoreet.</p>
+            <div class="bio">
+                <h2>Karakter Hikayesi</h2>
+                <p><strong>Kişilik Tipi:</strong> içe kapanık yeni insanlarla tanışmakta zorluk çeken pısırık bi insan.</p>
+                <p><strong>Güçlü Yönleri:</strong> yeni şeyler öğrenme konusunda hızlıdır.</p>
+                <p><strong>Zayıf Yönleri:</strong> Anksiyetesi ileri derece.</p>
+                <p><strong>Hobiler ve İlgi Alanları:</strong> motor ve bisiklet sürmek araştırma yapmak üretken olmak.</p>
+                <p><strong>Fobiler ve Korkular:</strong> sert görünümlü insanlar deniz okyanus gibi büyük sular kesici alet ve ateşli silahlar.</p>
+                <div class="line"></div>      
+                <h3>Ana Hikaye</h3>
+                <p>Lucas Cloud'un Hikayesi
+
+                    Lucas Cloud, 1 Ocak 2007'de Meksika'da yoksulluk içinde doğdu. Babasının kartellere borçlanmasıyla ailesi tehdit altında yaşarken, 14 yaşında hayatının en korkunç gecesini yaşadı. Kartel üyeleri ailesini acımasızca katlederken, küçük kız kardeşini kaçırdı. Lucas, üç gün boyunca saklanarak hayatta kaldı ve aile dostu Manuel tarafından bulundu. Manuel, onu korumak için gizlice bir mülteci botuyla Amerika’ya gönderdi.
+                    
+                    Yeni Bir Hayat: Amerika
+                    
+                    Chicago’da Manuel’in arkadaşıyla yaşayan Lucas, travması nedeniyle içine kapanık bir hayat sürdü. Geceleri kabuslar görüp günlerce yemek yemediği zamanlar oldu. Zamanla hayata tutunmaya çalıştı, bir kahvaltı dükkanında çalışmaya başladı ve insanlarla iletişim kurmaya alıştı. Ancak, geçmişi peşini bırakmıyordu. 16 yaşında kendi ayakları üzerinde durmaya karar vererek Los Santos’a taşındı ve iltica başvurusu yaptı. Mücadele dolu 6 ayın ardından yasal olarak Amerika’da kalma hakkı kazandı.
+                    
+                    İntikam Yolu
+                    
+                    Los Santos’ta yeni bir hayat kurmaya çalışırken, bir gün Telegram’da kardeşine yapılanların kaydına rastladı. Bu görüntüler, içinde derin bir öfke uyandırdı. Artık unutmaktan vazgeçti, gerçeğin peşinden gitmeliydi. 18 yaşına kadar yoğun şekilde çalışarak para biriktirdi ve siber güvenlik ile bilgisayar korsanlığı alanında kendini geliştirdi. Araştırmalar yaparak izleri takip etmeye başladı. Artık amacı belliydi: Kartelin izini sürmek, suçluları tespit etmek ve intikamını almak. Geçmişin gölgesinden sıyrılmanın tek yolu, yüzleşmekti.</p>
             </div>
 
             <div class="line"></div>
@@ -187,19 +223,16 @@
                 <h2>Kullandığı Arabalar</h2>
                 <div class="car-gallery">
                     <div class="img-box" onclick="nextCar(1)">
-                        <img src="bumblebee.png" alt="Car 1">
+                        <img src="/fotolar/rox1.png" alt="Car 1">
                     </div>
                     <div class="img-box" onclick="nextCar(2)">
-                        <img src="jester1.png" alt="Car 2">
-                    </div>
-                    <div class="img-box" onclick="nextCar(3)">
-                        <img src="elegybg.png" alt="Car 3">
+                        <img src="/fotolar/rox2.png" alt="Car 2">
                     </div>
                     <div class="img-box" onclick="nextCar(4)">
-                        <img src="komoda.png" alt="Car 4">
+                        <img src="r.png" alt="Car 4">
                     </div>
                     <div class="img-box" onclick="nextCar(5)">
-                        <img src="tailgaters.png" alt="Car 5">
+                        <img src="/fotolar/tailgaters.png" alt="Car 5">
                     </div>
                 </div>
             </div>
@@ -208,14 +241,12 @@
 
         <div class="right-column">
             <!-- Profile Image -->
-            <img src="lucas1.png" alt="Lucas Cloud Profile" width="250px" class="img-box">
+            <img src="/fotolar/lucas1.png" alt="Lucas Cloud Profile" width="250px" class="img-box">
 
             <!-- More Images -->
             <div class="img-box">
-                <img src="lucas2.png" alt="Lucas Cloud 2" width="250px" class="img-box">
+                <img src="/fotolar/lucas2.png" alt="Lucas Cloud 2" width="250px" class="img-box">
             </div>
-            <div class="img-box">
-                <img src="lucas3.png" alt="Lucas Cloud 3" width="250px" class="img-box">
             </div>
         </div>
     </div>
@@ -223,7 +254,7 @@
     <div class="footer">
         <p><a href="https://discord.gg/VYUpgk7B">Discord</a></p>
         <p><a href="mailto:exenonrp@gmail.com">exenonrp@gmail.com</a></p>
-        Tüm Hakları Saklıdır &copy; 2025
+        Tüm Hakları Saklıdı. &copy; 2025
     </div>
 
     

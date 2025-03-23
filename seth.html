@@ -31,15 +31,32 @@
             justify-content: center;
             padding: 20px 0;
             z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
         }
 
         .navbar a {
-            color: #0ff;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             margin: 0 20px;
             font-size: 18px;
             transition: 0.3s;
             position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e47208;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s;
         }
 
         .navbar a:hover::after {
@@ -69,15 +86,15 @@
 
         .hero h1 {
             font-size: 60px;
-            text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+            text-shadow: 0 0 10px #e47208, 0 0 20px #ff5100;
             animation: glow 1.5s infinite alternate;
             position: relative;
             z-index: 1;
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 10px #0ff; }
-            to { text-shadow: 0 0 20px #ff00ff; }
+            from { text-shadow: 0 0 10px #e47208; }
+            to { text-shadow: 0 0 20px #ff5100; }
         }
 
         .container {
@@ -100,7 +117,7 @@
         .line {
             width: 100%;
             height: 2px;
-            background-color: #0ff;
+            background-color: rgb(255, 255, 255);
             margin: 20px 0;
         }
 
@@ -110,7 +127,7 @@
 
         .bio h2, .story h2, .cars h2 {
             font-size: 24px;
-            color: #0ff;
+            color: #e47208;
         }
 
         .bio p, .story p, .cars p {
@@ -187,19 +204,19 @@
                 <h2>Kullandığı Arabalar</h2>
                 <div class="car-gallery">
                     <div class="img-box" onclick="nextCar(1)">
-                        <img src="bumblebee.png" alt="Car 1">
+                        <img src="/fotolar/The Karin Kuruma ir #gta5 #cars.jpg" alt="Car 1">
                     </div>
                     <div class="img-box" onclick="nextCar(2)">
-                        <img src="jester1.png" alt="Car 2">
+                        <img src="/fotolar/Punisher.jpg" alt="Car 2">
                     </div>
                     <div class="img-box" onclick="nextCar(3)">
-                        <img src="elegybg.png" alt="Car 3">
+                        <img src="/fotolar/indir (6).jpg" alt="Car 3">
                     </div>
                     <div class="img-box" onclick="nextCar(4)">
-                        <img src="komoda.png" alt="Car 4">
+                        <img src="/fotolar/404.png" alt="Car 4">
                     </div>
                     <div class="img-box" onclick="nextCar(5)">
-                        <img src="tailgaters.png" alt="Car 5">
+                        <img src="/fotolar/404.png" alt="Car 5">
                     </div>
                 </div>
             </div>
@@ -208,14 +225,14 @@
 
         <div class="right-column">
             <!-- Profile Image -->
-            <img src="seth1.png" alt="Seth Profile" width="250px" class="img-box">
+            <img src="/fotolar/404.png" alt="Seth Profile" width="250px" class="img-box">
 
             <!-- More Images -->
             <div class="img-box">
-                <img src="seth2.png" alt="Seth 2" width="250px" class="img-box">
+                <img src="/fotolar/404.png" alt="Seth 2" width="250px" class="img-box">
             </div>
             <div class="img-box">
-                <img src="seth3.png" alt="Seth 3" width="250px" class="img-box">
+                <img src="/fotolar/404.png" alt="Seth 3" width="250px" class="img-box">
             </div>
         </div>
     </div>
